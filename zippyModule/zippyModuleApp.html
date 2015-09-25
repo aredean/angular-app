@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="zippyModule">
+    <head>
+        <script src="../angular.js" type="text/javascript"></script>
+        <script src="zippyApp.js" type="text/javascript"></script>
+    </head>
+    
+    <body>
+        <div ng-controller="Ctrl3">
+            Title: <input ng-model="title"> <br>
+            Text: <textarea ng-model="text"></textarea>
+            <hr>
+            <div class="zippy" zippy-title="Details: {{title}}...">{{text}}</div>
+        </div>
+    
+    </body>
+
+
+</html>

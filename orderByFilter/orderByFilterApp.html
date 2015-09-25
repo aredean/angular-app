@@ -1,0 +1,28 @@
+<html ng-app="orderByApp">
+    <head>
+        <script src="../angular.js"></script>
+        <script src="orderBy.js"></script>
+    </head>
+    
+    <body>
+        <div ng-controller="Ctrl">
+            <pre>Sorting predicate = {{predicate}}; reverse = {{reverse}}</pre>
+            <hr/>
+            [ <a href="" ng-click="predicate=''">unsorted</a> ]
+            <table>
+                <tr ng-repeat="friend in friends">
+                    <th><a href="" ng-click="predicate = 'name'; reverse=false">Name</a></th>
+                    <th><a href="" ng-click="predicate = '-name'; reverse=false">^</a></th>
+                    <th><a href="" ng-click="predicate = 'phone'; reverse=!reverse">Phone Number</a></th>
+                    <th><a href="" ng-click="predicate = 'age'; reverse=!reverse">Age</a></th>                    
+                </tr>
+                <td>{{friend.name}}</td>
+                <td>{{friend.phone}}</td>
+                <td>{{friend.age}}</td>
+            </table>
+        </div>
+        
+    </body>
+
+
+</html>

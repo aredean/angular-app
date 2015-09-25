@@ -1,0 +1,33 @@
+<html ng-app>
+    <head>
+    <script src="angular.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
+    </head>
+    
+    <body>
+        <div ng-init="friends = [{name: 'Jhon', phone: '555-1276'}, {name: 'Mary', phone: '800-BIG-MARY'}, {name: 'Mike', phone: '555-4321'}, {name: 'Adam', phone: '555-5678'}, {name: 'Julie', phone: '555-8765'}, {name: 'Juliette', phone: '555-5678'}]"></div>
+        Search : <input ng-model="searchText">
+        <table id="searchTextResult">
+            <tr><th>Name</th><th>Phone</th></tr>
+            <tr ng-repeat="friend in friends | filter:searchText">
+                <td>{{friend.name}}</td>
+                <td>{{friend.phone}}</td>
+            </tr>
+        </table>
+        
+        <hr>
+        Any: <input ng-model="search.$"> <br>
+        Name only: <input ng-model="search.name"> <br>
+        Phone only: <input ng-model="search.phone"> <br>
+        Equality: <input type="checkbox" ng-model="strict"> <br>
+        <table id="searchObjResults">
+            <tr ng-repeat="friend in friends | filter:search:strict">
+                <td>{{friend.name}}</td>
+                <td>{{friend.phone}}</td>
+            </tr>
+        </table>
+    
+    </body>
+
+
+</html>
